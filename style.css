@@ -400,8 +400,19 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- 7. Werte ---------- */
 
-.values { padding: var(--size-10) var(--size-5); background: var(--color-bg); }
-.values__inner { max-width: var(--max-width); margin: 0 auto; }
+.values { position: relative; overflow: hidden; padding: var(--size-10) var(--size-5); background: var(--color-bg); }
+.values__deco {
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+  width: 220px;
+  height: 220px;
+  color: var(--color-accent);
+  opacity: 0.09;
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+.values__inner { position: relative; z-index: 1; max-width: var(--max-width); margin: 0 auto; }
 .values__header { max-width: 62ch; margin-bottom: var(--size-8); }
 .values__grid {
   display: grid;
@@ -688,7 +699,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- 13. CTA banner ---------- */
 
 .cta-banner {
-  background: linear-gradient(135deg, #241b14, #3a2717);
+  /* Foto: Pommes-Portion, Pexels (Jonathan Borba), Lizenz siehe impressum.html „Bildnachweise" */
+  background:
+    linear-gradient(115deg, rgba(28, 20, 13, 0.94) 28%, rgba(28, 20, 13, 0.68) 62%, rgba(28, 20, 13, 0.88) 100%),
+    url("https://images.pexels.com/photos/5779487/pexels-photo-5779487.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1600&h=700")
+      center / cover no-repeat;
   color: #fff;
   padding: var(--size-9) var(--size-5);
 }
@@ -697,7 +712,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   margin: 0 auto;
 }
 .cta-banner h2 { color: #fff; margin-bottom: var(--size-3); font-size: clamp(1.7rem, 3vw, 2.2rem); }
-.cta-banner p { color: rgba(255,255,255,0.75); margin-bottom: var(--size-6); }
+.cta-banner p { color: rgba(255,255,255,0.85); margin-bottom: var(--size-6); text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
 
 /* ---------- 14. Anfahrt ---------- */
 
@@ -961,13 +976,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero { min-height: 100vh; }
   .reviews__summary { flex-direction: column; align-items: flex-start; }
   .back-to-top { right: var(--size-4); bottom: var(--size-4); }
+  .values__deco { width: 140px; height: 140px; right: -20px; bottom: -10px; }
 }
 
 /* ---------- 21. Druckansicht ---------- */
 
 @media print {
   .nav, .hero__bg, .gallery, .lightbox, .cta-banner, .back-to-top,
-  .btn--whatsapp, .contact__map, .faq__icon { display: none !important; }
+  .btn--whatsapp, .contact__map, .faq__icon, .values__deco { display: none !important; }
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   .hero { min-height: auto; color: #000; padding: 1rem 0; }
