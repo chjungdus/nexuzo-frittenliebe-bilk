@@ -286,17 +286,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  /* BILD ERSETZEN: Hero-Foto vom Imbiss/Pommes-Theke (empfohlen 1920x1280px) statt Gradient */
+  /* Foto: Burger auf Schwarz, Pexels, Lizenz/Nachweis siehe impressum.html "Bildnachweise" */
   background:
-    radial-gradient(ellipse at 15% 20%, rgba(255,255,255,0.10), transparent 55%),
-    radial-gradient(ellipse at 85% 80%, rgba(0,0,0,0.25), transparent 60%),
-    linear-gradient(135deg, #c8511f 0%, #a83b16 45%, #5c2410 100%);
-}
-.hero__bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px);
+    linear-gradient(100deg, rgba(20,14,9,0.93) 0%, rgba(20,14,9,0.6) 45%, rgba(20,14,9,0.82) 100%),
+    radial-gradient(ellipse at 85% 12%, rgba(200,81,31,0.22), transparent 55%),
+    url("https://images.pexels.com/photos/37881956/pexels-photo-37881956.jpeg?auto=compress&cs=tinysrgb&w=1920")
+      center top / cover no-repeat;
 }
 
 .hero__content {
@@ -419,14 +414,22 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   grid-template-columns: repeat(4, 1fr);
   gap: var(--size-6);
 }
-.values__index {
-  display: block;
-  font-family: var(--font-display);
-  font-size: var(--font-size-5);
-  color: var(--color-border);
-  margin-bottom: var(--size-2);
+.values__item h3 {
+  position: relative;
+  font-size: var(--font-size-3);
+  margin-bottom: var(--size-3);
+  padding-top: var(--size-4);
 }
-.values__item h3 { font-size: var(--font-size-3); margin-bottom: var(--size-2); }
+.values__item h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
 .values__item p { color: var(--color-muted); font-size: var(--font-size-0); }
 
 /* ---------- 8. About ---------- */
@@ -483,6 +486,37 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .process__step h3 { font-size: var(--font-size-3); margin-bottom: var(--size-2); }
 .process__step p { color: var(--color-muted); font-size: var(--font-size-0); }
+
+/* ---------- 9b. Speisekarte-Teaser ---------- */
+
+.menu-teaser {
+  /* Foto: Currywurst mit Pommes, Pexels, Lizenz/Nachweis siehe impressum.html "Bildnachweise" */
+  background:
+    linear-gradient(0deg, rgba(20,14,9,0.86), rgba(20,14,9,0.5)),
+    url("https://images.pexels.com/photos/28236333/pexels-photo-28236333.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1800&h=650")
+      center / cover no-repeat;
+  padding: var(--size-9) var(--size-5);
+  text-align: center;
+}
+.menu-teaser__inner { max-width: 620px; margin: 0 auto; }
+.menu-teaser__eyebrow {
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: var(--font-size-0);
+  color: #fff;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: var(--radius);
+  padding: var(--size-1) var(--size-3);
+  margin-bottom: var(--size-4);
+}
+.menu-teaser__title {
+  color: #fff;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin-bottom: var(--size-6);
+}
 
 /* ---------- 10. Menu ---------- */
 
@@ -983,7 +1017,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 @media print {
   .nav, .hero__bg, .gallery, .lightbox, .cta-banner, .back-to-top,
-  .btn--whatsapp, .contact__map, .faq__icon, .values__deco { display: none !important; }
+  .btn--whatsapp, .contact__map, .faq__icon, .values__deco, .menu-teaser { display: none !important; }
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   .hero { min-height: auto; color: #000; padding: 1rem 0; }
