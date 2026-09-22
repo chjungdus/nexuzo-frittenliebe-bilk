@@ -288,10 +288,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   /* Foto: Burger auf Schwarz, Pexels, Lizenz/Nachweis siehe impressum.html "Bildnachweise" */
   background:
-    linear-gradient(100deg, rgba(20,14,9,0.93) 0%, rgba(20,14,9,0.6) 45%, rgba(20,14,9,0.82) 100%),
+    linear-gradient(100deg, rgba(20,14,9,0.88) 0%, rgba(20,14,9,0.42) 45%, rgba(20,14,9,0.75) 100%),
     radial-gradient(ellipse at 85% 12%, rgba(200,81,31,0.22), transparent 55%),
     url("https://images.pexels.com/photos/37881956/pexels-photo-37881956.jpeg?auto=compress&cs=tinysrgb&w=1920")
-      center top / cover no-repeat;
+      center 63% / cover no-repeat;
 }
 
 .hero__content {
