@@ -1,0 +1,55 @@
+/* Zusatzstile für Impressum & Datenschutz — ergänzt style.css */
+
+.legal {
+  padding: var(--size-9) var(--size-5) var(--size-10);
+}
+
+.legal__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.legal__inner h1 {
+  font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+  margin-bottom: var(--size-5);
+}
+
+.legal__hint {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--size-4) var(--size-5);
+  color: var(--color-muted);
+  font-size: var(--font-size-0);
+  margin-bottom: var(--size-8);
+}
+
+.legal__section {
+  margin-bottom: var(--size-7);
+}
+
+.legal__section h2 {
+  font-family: var(--font-body);
+  font-size: var(--font-size-3);
+  font-weight: 700;
+  margin-bottom: var(--size-3);
+}
+
+.legal__section p {
+  color: var(--color-muted);
+  margin-bottom: var(--size-3);
+  max-width: 68ch;
+}
+.legal__section p:last-child { margin-bottom: 0; }
+
+.legal__section a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.legal__note {
+  font-size: var(--font-size-0);
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--size-5);
+}
