@@ -28,16 +28,16 @@
 /* ---------- 1. Tokens & Reset ---------- */
 
 :root {
-  --color-bg:        #fff8f3;
-  --color-surface:   #ffe8d6;
-  --color-surface-2: #ffd3ad;
+  --color-bg:        #fdfaf9;   /* fast Weiß, kein Cremeton mehr */
+  --color-surface:   #f8e9e4;   /* helles Koralle/Terrakotta statt Creme */
+  --color-surface-2: #f3d3c7;   /* etwas kräftigeres Koralle für Verläufe */
   --color-accent:    #e8491c;   /* kräftiges Paprika-/Tomatenrot-Orange */
   --color-accent-strong: #b52f12;  /* dunkleres Rot für große Flächen/Hover */
   --color-accent-2:  #2d7d46;   /* frisches Grün, Kräuter/vegan */
   --color-ink:       #2c1710;
   --color-text:      #2c1710;
   --color-muted:     #7a5c4a;
-  --color-border:    #f4c9a0;
+  --color-border:    #edc7ba;
   --color-open:      #2d7d46;
   --color-closed:    #b52f12;
 
@@ -168,6 +168,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--color-ink);
 }
 .btn--on-dark:hover { box-shadow: var(--shadow-3); }
+
+.btn--lieferando {
+  background: var(--color-ink);
+  color: #fff;
+}
+.btn--lieferando:hover { box-shadow: var(--shadow-3); background: #000; }
+.btn__bag-icon { width: 18px; height: 18px; flex-shrink: 0; }
 
 .btn--whatsapp {
   margin-top: var(--size-6);
@@ -403,6 +410,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .usp__icon svg { width: 26px; height: 26px; }
 .usp__title { font-weight: 700; margin-bottom: var(--size-1); }
 .usp__text { color: var(--color-muted); font-size: var(--font-size-0); }
+@media (min-width: 860px) {
+  .usp__item:nth-child(2) { transform: translateY(22px); }
+  .usp__item:nth-child(3) { transform: translateY(-10px); }
+  .usp__item:nth-child(4) { transform: translateY(34px); }
+}
 
 /* ---------- 7. Werte ---------- */
 
@@ -442,6 +454,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   background: var(--color-accent);
 }
 .values__item p { color: var(--color-muted); font-size: var(--font-size-0); }
+@media (min-width: 860px) {
+  .values__item:nth-child(1) { transform: translateY(18px); }
+  .values__item:nth-child(3) { transform: translateY(-14px); }
+  .values__item:nth-child(4) { transform: translateY(10px); }
+}
 
 /* ---------- 8. About ---------- */
 
@@ -454,14 +471,32 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   gap: var(--size-9);
   align-items: center;
 }
+.about__media {
+  position: relative;
+}
 .about__media-block {
   /* BILD ERSETZEN: Foto vom Pavillon / Theke / Inhaber (empfohlen 1000x1250px) */
+  position: relative;
+  z-index: 1;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius);
   background:
     linear-gradient(160deg, rgba(200,81,31,0.18), rgba(45,125,70,0.14)),
     linear-gradient(45deg, var(--color-surface-2), var(--color-bg));
   border: 1px solid var(--color-border);
+}
+@media (min-width: 860px) {
+  .about__media-block { transform: rotate(-2deg); box-shadow: var(--shadow-3); }
+  .about__media::before {
+    content: "";
+    position: absolute;
+    inset: var(--size-5) calc(-1 * var(--size-5)) calc(-1 * var(--size-5)) var(--size-5);
+    border: 3px solid var(--color-accent);
+    border-radius: var(--radius);
+    transform: rotate(2deg);
+    z-index: 0;
+  }
+  .about__text { margin-top: var(--size-8); }
 }
 .about__text h2 { margin-bottom: var(--size-4); }
 .about__text p { color: var(--color-muted); margin-bottom: var(--size-3); max-width: 54ch; }
@@ -503,31 +538,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .lieferando {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(120deg, #7a2410 0%, #e8491c 55%, #b52f12 100%);
+  background:
+    linear-gradient(120deg, rgba(90,26,12,0.86) 0%, rgba(210,66,25,0.72) 55%, rgba(150,40,15,0.86) 100%),
+    url('assets/lieferando-burger.jpg') center 38% / cover no-repeat;
   padding: var(--size-10) var(--size-5);
   text-align: center;
   color: #fff;
-}
-.lieferando__graphic {
-  position: absolute;
-  left: -90px;
-  top: -70px;
-  width: 480px;
-  height: 480px;
-  max-width: 60vw;
-  color: rgba(255,255,255,0.14);
-  transform: rotate(14deg);
-  pointer-events: none;
-}
-.lieferando__graphic--2 {
-  left: auto;
-  right: -60px;
-  top: auto;
-  bottom: -100px;
-  width: 360px;
-  height: 360px;
-  transform: rotate(-18deg) scaleX(-1);
-  color: rgba(255,255,255,0.10);
 }
 .lieferando__inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
 .lieferando__eyebrow {
@@ -575,6 +591,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .menu__inner { max-width: var(--max-width); margin: 0 auto; }
 .menu__header { max-width: 62ch; margin-bottom: var(--size-8); }
+.menu__full-link { margin-top: var(--size-4); }
+
+.menu__categories { margin: var(--size-8) 0; padding-top: var(--size-6); border-top: 1px solid var(--color-border); }
+.menu__categories h3 { font-size: var(--font-size-3); margin-bottom: var(--size-4); }
 
 .menu__grid {
   display: grid;
@@ -782,20 +802,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .cta-banner {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(100deg, #6b1f0d 0%, #b52f12 55%, #7a2410 100%);
+  background:
+    linear-gradient(100deg, rgba(75,22,10,0.88) 0%, rgba(150,40,15,0.74) 55%, rgba(90,26,12,0.88) 100%),
+    url('assets/cta-currywurst.jpg') center 42% / cover no-repeat;
   color: #fff;
   padding: var(--size-9) var(--size-5);
-}
-.cta-banner__graphic {
-  position: absolute;
-  right: -80px;
-  bottom: -80px;
-  width: 460px;
-  height: 460px;
-  max-width: 55vw;
-  color: rgba(255,255,255,0.13);
-  transform: rotate(-10deg) scaleX(-1);
-  pointer-events: none;
 }
 .cta-banner__inner {
   position: relative;
@@ -1060,6 +1071,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .nav__links.is-open { display: flex; }
   .nav__toggle { display: flex; }
   .nav__actions .btn--primary { display: none; }
+  .btn--lieferando .btn__label { display: none; }
+  .btn--lieferando { padding: 0.7rem; }
   .usp__inner { grid-template-columns: 1fr; }
   .values__grid { grid-template-columns: 1fr; }
   .menu__grid { grid-template-columns: 1fr; }

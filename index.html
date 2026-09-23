@@ -28,6 +28,10 @@
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav__actions">
+      <a class="btn btn--lieferando" href="https://www.lieferando.de/speisekarte/frittenliebe-bilk" target="_blank" rel="noopener" aria-label="Bei Lieferando bestellen">
+        <svg class="btn__bag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12.5a1.5 1.5 0 0 1-1.5 1.5h-7a1.5 1.5 0 0 1-1.5-1.5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="btn__label">Lieferando</span>
+      </a>
       <a class="btn btn--primary" href="tel:+4917688040371">Anrufen</a>
       <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
@@ -136,7 +140,8 @@
       <div class="menu__header">
         <p class="section-eyebrow">Speisekarte</p>
         <h2 class="section-title">Beliebte Klassiker</h2>
-        <p class="section-lead">Ein Auszug aus dem, was am häufigsten bestellt wird. Die vollständige Karte gibt es vor Ort und bei Lieferando.</p>
+        <p class="section-lead">Ein Auszug aus dem, was am häufigsten bestellt wird — inklusive der kompletten Burger-Karte weiter unten.</p>
+        <a class="btn btn--outline menu__full-link" href="https://www.lieferando.de/speisekarte/frittenliebe-bilk" target="_blank" rel="noopener">Ganze Speisekarte ansehen<span aria-hidden="true"> →</span></a>
       </div>
 
       <div class="menu__grid">
@@ -181,6 +186,18 @@
         <p class="menu__note">Preise inkl. MwSt., Stand: Online-Speisekarte. Änderungen vorbehalten — verbindliche Preise gelten vor Ort.</p>
       </div>
 
+      <div class="menu__categories">
+        <h3>Außerdem auf der Karte</h3>
+        <div class="dips__grid">
+          <span class="dips__chip reveal-item">Burger-Menüs</span>
+          <span class="dips__chip reveal-item">Hähnchenschnitzel</span>
+          <span class="dips__chip reveal-item">Snacks</span>
+          <span class="dips__chip reveal-item">Saucen</span>
+          <span class="dips__chip reveal-item">Alkoholfreie Getränke</span>
+        </div>
+        <p class="menu__note">Details und Preise dieser Kategorien: ganze Speisekarte bei Lieferando ansehen oder vor Ort nachfragen.</p>
+      </div>
+
       <div class="menu__dips">
         <h3>Saucen &amp; Dips</h3>
         <div class="dips__grid">
@@ -201,29 +218,6 @@
   </section>
 
   <section class="lieferando" id="lieferando" aria-label="Lieferung über Lieferando">
-    <svg class="lieferando__graphic" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-      <path d="M72,86 L62,188 L138,188 L128,86 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M64,86 L74,80 L82,88 L92,79 L101,88 L110,79 L119,88 L128,80 L136,86" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M78,84 L72,26" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M93,82 L89,12" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M108,82 L112,8" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M122,83 L129,20" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M80,110 L74,176" stroke="currentColor" stroke-width="2"/>
-      <path d="M100,110 L98,176" stroke="currentColor" stroke-width="2"/>
-      <path d="M120,110 L124,176" stroke="currentColor" stroke-width="2"/>
-      <circle cx="88" cy="100" r="1.6" fill="currentColor"/>
-      <circle cx="107" cy="105" r="1.6" fill="currentColor"/>
-      <circle cx="116" cy="96" r="1.6" fill="currentColor"/>
-      <circle cx="96" cy="118" r="1.6" fill="currentColor"/>
-    </svg>
-    <svg class="lieferando__graphic lieferando__graphic--2" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-      <path d="M72,86 L62,188 L138,188 L128,86 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M64,86 L74,80 L82,88 L92,79 L101,88 L110,79 L119,88 L128,80 L136,86" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M78,84 L72,26" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M93,82 L89,12" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M108,82 L112,8" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M122,83 L129,20" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-    </svg>
     <div class="lieferando__inner">
       <p class="lieferando__eyebrow">Nach Hause bestellen</p>
       <h2 class="lieferando__title">Frittenliebe Bilk jetzt bei Lieferando</h2>
@@ -542,21 +536,6 @@
   </section>
 
   <section class="cta-banner">
-    <svg class="cta-banner__graphic" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-      <path d="M72,86 L62,188 L138,188 L128,86 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M64,86 L74,80 L82,88 L92,79 L101,88 L110,79 L119,88 L128,80 L136,86" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M78,84 L72,26" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M93,82 L89,12" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M108,82 L112,8" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M122,83 L129,20" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M80,110 L74,176" stroke="currentColor" stroke-width="2"/>
-      <path d="M100,110 L98,176" stroke="currentColor" stroke-width="2"/>
-      <path d="M120,110 L124,176" stroke="currentColor" stroke-width="2"/>
-      <circle cx="88" cy="100" r="1.6" fill="currentColor"/>
-      <circle cx="107" cy="105" r="1.6" fill="currentColor"/>
-      <circle cx="116" cy="96" r="1.6" fill="currentColor"/>
-      <circle cx="96" cy="118" r="1.6" fill="currentColor"/>
-    </svg>
     <div class="cta-banner__inner">
       <h2>Vorbeikommen am Kirchplatz</h2>
       <p>Pavillon 1D Kirchplatz, direkt an der U-Bahn D-Kirchplatz — Bilk, Düsseldorf.</p>
