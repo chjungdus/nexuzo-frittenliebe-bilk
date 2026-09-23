@@ -1103,11 +1103,120 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .section-eyebrow, .review, .menu__card, .process__step { break-inside: avoid; }
 }
 
-/* ---------- Branchen-Muster (Imbiss: Pommes, Burger, Currywurst, Sauce) ---------- */
-:root { --pattern-imbiss: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23e8491c' stroke-opacity='0.2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E %3Cg transform='translate(18 14) rotate(-12 20 25)'%3E%3Cpath d='M8 22 L12 50 L30 50 L34 22 Z'/%3E%3Cpath d='M13 22 L11 6 M19 22 L18 2 M25 22 L27 4 M31 22 L33 8'/%3E%3C/g%3E %3Cg transform='translate(92 20) rotate(8 22 18)'%3E%3Cpath d='M4 18 Q4 2 22 2 Q40 2 40 18 Z'/%3E%3Cpath d='M2 24 Q8 20 14 24 Q20 28 26 24 Q32 20 38 24 Q42 26 44 24'/%3E%3Cpath d='M4 30 L40 30 Q40 38 32 38 L12 38 Q4 38 4 30 Z'/%3E%3C/g%3E %3Cg transform='translate(30 96) rotate(18 30 20)'%3E%3Cpath d='M4 14 Q4 4 14 4 L48 4 Q58 4 58 14 Q58 24 48 24 L14 24 Q4 24 4 14 Z'/%3E%3Cpath d='M16 8 L16 20 M28 8 L28 20 M40 8 L40 20'/%3E%3C/g%3E %3Cg transform='translate(112 104) rotate(-20 10 14)'%3E%3Cpath d='M10 2 Q20 16 10 26 Q0 16 10 2 Z'/%3E%3C/g%3E %3C/g%3E%3C/svg%3E"); }
-body,
-.usp, .menu, .values, .about, .process, .gallery, .reviews, .faq, .contact, .anfahrt {
-  background-image: var(--pattern-imbiss);
-  background-repeat: repeat;
+/* ---------- Sektions-Hintergründe: jede Sektion mit eigenem Motiv ---------- */
+:root {
+  --bg-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.09 0 0 0 0 0.06 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --bg-icons: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23e8491c' stroke-opacity='0.16' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate(18 14) rotate(-12 20 25)'%3E%3Cpath d='M8 22 L12 50 L30 50 L34 22 Z'/%3E%3Cpath d='M13 22 L11 6 M19 22 L18 2 M25 22 L27 4 M31 22 L33 8'/%3E%3C/g%3E%3Cg transform='translate(92 20) rotate(8 22 18)'%3E%3Cpath d='M4 18 Q4 2 22 2 Q40 2 40 18 Z'/%3E%3Cpath d='M2 24 Q8 20 14 24 Q20 28 26 24 Q32 20 38 24 Q42 26 44 24'/%3E%3Cpath d='M4 30 L40 30 Q40 38 32 38 L12 38 Q4 38 4 30 Z'/%3E%3C/g%3E%3Cg transform='translate(30 96) rotate(18 30 20)'%3E%3Cpath d='M4 14 Q4 4 14 4 L48 4 Q58 4 58 14 Q58 24 48 24 L14 24 Q4 24 4 14 Z'/%3E%3Cpath d='M16 8 L16 20 M28 8 L28 20 M40 8 L40 20'/%3E%3C/g%3E%3Cg transform='translate(112 104) rotate(-20 10 14)'%3E%3Cpath d='M10 2 Q20 16 10 26 Q0 16 10 2 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  --bg-streets: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='480' viewBox='0 0 720 480'%3E%3Cg fill='none' stroke='%23e8491c' stroke-linecap='round'%3E%3Cg stroke-opacity='0.13' stroke-width='16'%3E%3Cpath d='M-20 120 C180 100 300 170 740 140'/%3E%3Cpath d='M180 -20 C200 160 160 300 230 500'/%3E%3Cpath d='M-20 360 L740 330'/%3E%3Cpath d='M520 -20 C470 150 560 300 500 500'/%3E%3C/g%3E%3Cg stroke-opacity='0.12' stroke-width='5'%3E%3Cpath d='M-20 240 L300 250 L380 200 L740 230'/%3E%3Cpath d='M60 -20 L90 500'/%3E%3Cpath d='M360 -20 L340 500'/%3E%3Cpath d='M640 -20 L660 500'/%3E%3Cpath d='M230 420 L520 400'/%3E%3Cpath d='M400 60 L700 80'/%3E%3C/g%3E%3Cg stroke-opacity='0.2' stroke-width='2' stroke-dasharray='2 9'%3E%3Cpath d='M-20 300 C200 280 420 300 740 270'/%3E%3C/g%3E%3C/g%3E%3Cg fill='%23e8491c' fill-opacity='0.08'%3E%3Crect x='250' y='150' width='80' height='70' rx='4'/%3E%3Crect x='580' y='160' width='50' height='60' rx='4'/%3E%3Crect x='110' y='270' width='50' height='45' rx='4'/%3E%3Ccircle cx='430' cy='270' r='38'/%3E%3C/g%3E%3C/svg%3E");
+  --bg-kiosk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='360' viewBox='0 0 420 360'%3E%3Cg fill='none' stroke='%23e8491c' stroke-opacity='0.15' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M40 110 L380 110 L360 60 L60 60 Z'/%3E%3Cpath d='M40 110 Q57 135 74 110 Q91 135 108 110 Q125 135 142 110 Q159 135 176 110 Q193 135 210 110 Q227 135 244 110 Q261 135 278 110 Q295 135 312 110 Q329 135 346 110 Q363 135 380 110'/%3E%3Cpath d='M100 60 L90 110 M160 60 L155 110 M210 60 L210 110 M260 60 L265 110 M320 60 L330 110'/%3E%3Cpath d='M60 125 L60 330 M360 125 L360 330'/%3E%3Cpath d='M60 200 L360 200'/%3E%3Cpath d='M50 210 L370 210'/%3E%3Cpath d='M60 330 L360 330'/%3E%3Cpath d='M150 30 L270 30 L270 58 L150 58 Z'/%3E%3Cpath d='M100 175 L100 200 M120 170 L120 200 M110 172 L110 200'/%3E%3Cpath d='M250 185 Q265 170 280 185 L280 200 L250 200 Z'/%3E%3Cpath d='M300 160 Q312 150 324 160 L324 200 L300 200 Z'/%3E%3Cpath d='M20 330 L400 330'/%3E%3C/g%3E%3C/svg%3E");
+  --bg-awning: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='56' viewBox='0 0 80 56'%3E%3Crect width='40' height='40' fill='%23e8491c'/%3E%3Crect x='40' width='40' height='40' fill='%23fdfaf9'/%3E%3Cpath d='M0 40 Q20 64 40 40 Z' fill='%23e8491c'/%3E%3Cpath d='M40 40 Q60 64 80 40 Z' fill='%23fdfaf9'/%3E%3Cpath d='M0 40 Q20 64 40 40 Q60 64 80 40' fill='none' stroke='%23b52f12' stroke-opacity='0.35' stroke-width='1.5'/%3E%3C/svg%3E");
+  --bg-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='420' viewBox='0 0 1200 420' preserveAspectRatio='none'%3E%3Cpath d='M-20 300 C160 120 300 360 480 220 S820 60 960 220 S1150 300 1220 140' fill='none' stroke='%23e8491c' stroke-opacity='0.3' stroke-width='3' stroke-linecap='round' stroke-dasharray='1 14'/%3E%3Cpath d='M-20 340 C200 200 330 400 520 260 S840 110 1000 250 S1160 330 1220 200' fill='none' stroke='%23e8491c' stroke-opacity='0.1' stroke-width='40' stroke-linecap='round'/%3E%3C/svg%3E");
+  --bg-quote: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='200' viewBox='0 0 260 200'%3E%3Cg fill='%23e8491c' fill-opacity='0.1'%3E%3Cpath d='M20 190 L20 110 Q20 30 110 10 L118 36 Q70 52 66 100 L110 100 L110 190 Z'/%3E%3Cpath d='M150 190 L150 110 Q150 30 240 10 L248 36 Q200 52 196 100 L240 100 L240 190 Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Grundfläche: leichte Papierstruktur statt glatter Fläche */
+body { background-image: var(--bg-grain); }
+
+/* USP-Leiste: Imbiss-Icons (einzige Sektion mit Icon-Raster) */
+.usp {
+  background-color: var(--color-surface);
+  background-image: var(--bg-icons);
   background-size: 160px 160px;
+}
+
+/* Speisekarte: rot-weißes Imbisspapier (Karo wie in der Pommesschale) */
+.menu {
+  background-color: #fdf3ef;
+  background-image:
+    var(--bg-grain),
+    repeating-linear-gradient(0deg, rgba(232,73,28,0.07) 0 22px, transparent 22px 44px),
+    repeating-linear-gradient(90deg, rgba(232,73,28,0.07) 0 22px, transparent 22px 44px);
+}
+
+/* Kontakt: Bestellblock — Linien + roter Rand */
+.contact {
+  background-color: #fffdfc;
+  background-image:
+    linear-gradient(90deg, transparent 0 calc(3% - 1px), rgba(232,73,28,0.35) calc(3% - 1px) 3%, transparent 3%),
+    repeating-linear-gradient(180deg, transparent 0 35px, rgba(122,92,74,0.13) 35px 36px);
+}
+
+/* Anfahrt: gezeichneter Stadtplan-Ausschnitt */
+.anfahrt {
+  background-color: #f7ece6;
+  background-image: var(--bg-streets), var(--bg-grain);
+  background-size: 720px 480px, 220px 220px;
+  background-position: center, 0 0;
+}
+
+/* Ablauf: gepunkteter Weg quer durch die Sektion */
+.process {
+  background-color: var(--color-bg);
+  background-image: var(--bg-path), var(--bg-grain);
+  background-size: 100% 100%, 220px 220px;
+  background-repeat: no-repeat, repeat;
+}
+
+/* Über uns: warme Farbflächen + Zeichnung des Pavillons */
+.about {
+  background-color: #f6ddd3;
+  background-image:
+    var(--bg-kiosk),
+    radial-gradient(ellipse 45% 60% at 8% 15%, rgba(232,73,28,0.18), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 95% 90%, rgba(181,47,18,0.14), transparent 70%),
+    var(--bg-grain);
+  background-size: 360px 309px, auto, auto, 220px 220px;
+  background-position: right -30px bottom -12px, 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+}
+
+/* Galerie: Rasterpunkte, die zur Mitte hin auslaufen */
+.gallery {
+  position: relative;
+  background-color: var(--color-bg);
+  background-image: radial-gradient(rgba(232,73,28,0.28) 1.6px, transparent 1.8px);
+  background-size: 18px 18px;
+}
+.gallery > * { position: relative; z-index: 1; }
+.gallery::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 70% 65% at 50% 50%, var(--color-bg) 35%, rgba(253,250,249,0) 100%);
+}
+
+/* Bewertungen: große Anführungszeichen + weicher Lichtverlauf */
+.reviews {
+  background-color: var(--color-surface);
+  background-image:
+    var(--bg-quote),
+    radial-gradient(circle at 85% 20%, rgba(255,255,255,0.7), transparent 45%),
+    var(--bg-grain);
+  background-size: 300px 231px, auto, 220px 220px;
+  background-position: right 5% top 36px, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+/* Werte: Markise oben wie an der Imbissbude */
+.values {
+  background-color: #fff6f2;
+  background-image: var(--bg-awning), linear-gradient(180deg, rgba(232,73,28,0.08), transparent 45%), var(--bg-grain);
+  background-size: 80px 56px, auto, 220px 220px;
+  background-position: 0 0, 0 0, 0 0;
+  background-repeat: repeat-x, no-repeat, repeat;
+  padding-top: calc(var(--size-10, 5rem) + 40px);
+}
+
+/* FAQ: feines Punkteraster wie Notizpapier */
+.faq {
+  background-color: var(--color-surface);
+  background-image: radial-gradient(rgba(44,23,16,0.16) 1px, transparent 1.3px), var(--bg-grain);
+  background-size: 24px 24px, 220px 220px;
+}
+
+@media (max-width: 720px) {
+  .about { background-size: 260px 223px, auto, auto, 220px 220px; }
+  .reviews { background-size: 160px 123px, auto, 220px 220px; }
+  .contact { background-image: repeating-linear-gradient(180deg, transparent 0 35px, rgba(122,92,74,0.13) 35px 36px); }
+}
+@media print {
+  body, .usp, .menu, .contact, .anfahrt, .process, .about, .gallery, .reviews, .values, .faq { background-image: none !important; }
 }
