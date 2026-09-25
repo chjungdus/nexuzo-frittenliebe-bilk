@@ -44,21 +44,6 @@
 
   <section class="hero">
     <div class="hero__bg" aria-hidden="true"></div>
-    <svg class="hero__bg-graphic" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-      <path d="M72,86 L62,188 L138,188 L128,86 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M64,86 L74,80 L82,88 L92,79 L101,88 L110,79 L119,88 L128,80 L136,86" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M78,84 L72,26" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M93,82 L89,12" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M108,82 L112,8" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M122,83 L129,20" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M80,110 L74,176" stroke="currentColor" stroke-width="2"/>
-      <path d="M100,110 L98,176" stroke="currentColor" stroke-width="2"/>
-      <path d="M120,110 L124,176" stroke="currentColor" stroke-width="2"/>
-      <circle cx="88" cy="100" r="1.6" fill="currentColor"/>
-      <circle cx="107" cy="105" r="1.6" fill="currentColor"/>
-      <circle cx="116" cy="96" r="1.6" fill="currentColor"/>
-      <circle cx="96" cy="118" r="1.6" fill="currentColor"/>
-    </svg>
     <div class="hero__content reveal-scale">
       <p class="hero__eyebrow">Imbiss am Kirchplatz · Bilk, Düsseldorf</p>
       <h1 class="hero__title">Frittenliebe<br>Bilk</h1>
@@ -139,80 +124,190 @@
     <div class="menu__inner">
       <div class="menu__header">
         <p class="section-eyebrow">Speisekarte</p>
-        <h2 class="section-title">Beliebte Klassiker</h2>
-        <p class="section-lead">Ein Auszug aus dem, was am häufigsten bestellt wird — inklusive der kompletten Burger-Karte weiter unten.</p>
-        <a class="btn btn--outline menu__full-link" href="https://www.lieferando.de/speisekarte/frittenliebe-bilk" target="_blank" rel="noopener">Ganze Speisekarte ansehen<span aria-hidden="true"> →</span></a>
+        <h2 class="section-title">Frisch aus der Fritteuse</h2>
+        <p class="section-lead">Die komplette Karte vom Aushang am Kirchplatz — von der Currywurst über Burger und Schnitzel bis zu Süßkartoffel-Pommes und veganen Gerichten.</p>
       </div>
 
       <div class="menu__grid">
         <article class="menu__card reveal-item">
-          <div class="menu__card-media menu__card-media--currywurst" aria-hidden="true"></div>
-          <h3>Doppelte Currywurst</h3>
-          <p>Mit Pommes und hausgemachter Mayo — der meistbestellte Klassiker auf der Karte.</p>
+          <img class="menu__card-media" src="assets/currywurst-pommes.jpg" alt="Currywurst mit Currysoße und Pommes mit Mayo auf einem schwarzen Teller" width="1124" height="753" loading="lazy">
+          <div class="menu__card-body">
+            <h3>Currywurst mit Pommes</h3>
+            <p>Knackige Wurst in heißer Currysoße, dazu goldene Holland-Pommes mit Mayo — der Klassiker am Kirchplatz.</p>
+            <span class="menu__card-price">Currywurst ab 3,50 €</span>
+          </div>
         </article>
         <article class="menu__card reveal-item">
-          <div class="menu__card-media menu__card-media--schnitzel" aria-hidden="true"></div>
-          <h3>Schnitzel Wiener Art</h3>
-          <p>Goldbraun paniert, knusprig gebraten — von Gästen als besonders gelungen gelobt.</p>
+          <img class="menu__card-media" src="assets/suesskartoffel-pommes.jpg" alt="Süßkartoffel-Pommes mit heller Soße in einer schwarzen Schale" width="1124" height="1496" loading="lazy">
+          <div class="menu__card-body">
+            <h3>Süßkartoffel-Pommes</h3>
+            <p>Außen knusprig, innen süßlich-weich — mit Trüffelmayo, Knoblauchsoße oder einem anderen Dip nach Wahl.</p>
+            <span class="menu__card-price">ab 4,50 €</span>
+          </div>
         </article>
         <article class="menu__card reveal-item">
-          <div class="menu__card-media menu__card-media--burger" aria-hidden="true"></div>
-          <h3>Burger</h3>
-          <p>Saftig belegt mit hausgemachten Saucen — eine der Stärken des Hauses laut Stammgästen.</p>
-        </article>
-        <article class="menu__card reveal-item">
-          <div class="menu__card-media menu__card-media--vegan" aria-hidden="true"></div>
-          <h3>Vegan &amp; vegetarisch</h3>
-          <p>Eine große Auswahl abseits der Fleischgerichte — kein reines Beilagenprogramm.</p>
+          <img class="menu__card-media menu__card-media--burger" src="assets/klassiker-auswahl.jpg" alt="Burger, Chicken Nuggets und Pommes Currywurst in Pappschalen auf Holz" width="1439" height="961" loading="lazy">
+          <div class="menu__card-body">
+            <h3>Burger &amp; Nuggets</h3>
+            <p>Zehn Burger zur Wahl — alle auch als Chickenburger. Als Menü mit Getränk und kleinen Pommes.</p>
+            <span class="menu__card-price">Burger ab 5,50 €</span>
+          </div>
         </article>
       </div>
 
-      <div class="menu__sub">
-        <div class="menu__sub-header">
-          <h3>Burger-Auswahl im Überblick</h3>
-          <p class="section-lead">Die komplette Burger-Karte mit Preisen — für Schnitzel, Snacks, Saucen und Getränke lohnt sich ein Blick in die volle Karte bei Lieferando.</p>
+      <nav class="menu__jump" aria-label="Kategorien der Speisekarte">
+        <a href="#karte-burger">Burger</a>
+        <a href="#karte-schnitzel">Schnitzel</a>
+        <a href="#karte-kross">Kross &amp; Knusprig</a>
+        <a href="#karte-pommes">Pommes</a>
+        <a href="#karte-vegan">Vegan</a>
+        <a href="#karte-sossen">Soßen</a>
+        <a href="#karte-getraenke">Getränke</a>
+      </nav>
+
+      <div class="menu-board">
+        <div class="menu-block menu-block--wide reveal-item" id="karte-burger">
+          <h3 class="menu-block__title">Burger</h3>
+          <p class="menu-block__sub">Menü = Getränk + kleine Pommes · Alle Burger auch als Chickenburger</p>
+          <table class="burger-table">
+            <thead><tr><th scope="col"><span class="visually-hidden">Burger</span></th><th scope="col">Single</th><th scope="col">Double</th><th scope="col">Menü</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Hamburger Classic</th><td>5,50</td><td>7,90</td><td>11,00</td></tr>
+              <tr><th scope="row">Cheeseburger</th><td>5,90</td><td>8,70</td><td>11,50</td></tr>
+              <tr><th scope="row">Crispy Burger</th><td>5,50</td><td>7,90</td><td>11,00</td></tr>
+              <tr><th scope="row">Sucuk Burger</th><td>6,70</td><td>9,40</td><td>12,00</td></tr>
+              <tr><th scope="row">Chili Cheese Burger</th><td>6,70</td><td>9,10</td><td>12,00</td></tr>
+              <tr><th scope="row">Double Classic</th><td>7,90</td><td>–</td><td>13,50</td></tr>
+              <tr><th scope="row">Double Cheese</th><td>8,70</td><td>–</td><td>14,00</td></tr>
+              <tr><th scope="row">Trüffelburger</th><td>6,50</td><td>8,90</td><td>12,00</td></tr>
+              <tr><th scope="row">Barbecue Burger</th><td>6,50</td><td>8,90</td><td>12,00</td></tr>
+              <tr><th scope="row">Inferno Burger</th><td>6,50</td><td>8,90</td><td>12,00</td></tr>
+            </tbody>
+          </table>
         </div>
-        <ul class="price-list">
-          <li class="price-list__item reveal-item"><span>Classic Hamburger</span><span class="price-list__dots" aria-hidden="true"></span><span>6,80 €</span></li>
-          <li class="price-list__item reveal-item"><span>Cheeseburger</span><span class="price-list__dots" aria-hidden="true"></span><span>7,20 €</span></li>
-          <li class="price-list__item reveal-item"><span>Crispy Hähnchen Burger</span><span class="price-list__dots" aria-hidden="true"></span><span>6,80 €</span></li>
-          <li class="price-list__item reveal-item"><span>Smash Burger</span><span class="price-list__dots" aria-hidden="true"></span><span>7,80 €</span></li>
-          <li class="price-list__item reveal-item"><span>Smash Cheeseburger</span><span class="price-list__dots" aria-hidden="true"></span><span>8,20 €</span></li>
-          <li class="price-list__item reveal-item"><span>Sucuk Burger</span><span class="price-list__dots" aria-hidden="true"></span><span>8,00 €</span></li>
-          <li class="price-list__item reveal-item"><span>Chili-Cheeseburger</span><span class="price-list__dots" aria-hidden="true"></span><span>8,50 €</span></li>
-          <li class="price-list__item reveal-item"><span>Double Classic Burger</span><span class="price-list__dots" aria-hidden="true"></span><span>9,50 €</span></li>
-          <li class="price-list__item reveal-item"><span>Double Cheeseburger</span><span class="price-list__dots" aria-hidden="true"></span><span>9,80 €</span></li>
-        </ul>
-        <p class="menu__note">Preise inkl. MwSt., Stand: Online-Speisekarte. Änderungen vorbehalten — verbindliche Preise gelten vor Ort.</p>
+
+        <div class="menu-board__col">
+        <div class="menu-block reveal-item" id="karte-schnitzel">
+          <h3 class="menu-block__title">Schnitzel</h3><p class="menu-block__sub">mit kleinen Pommes + Krautsalat</p>
+          <ul class="price-list">
+            <li class="price-list__item"><span class="price-list__name">Schnitzel Classic Wiener Art</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">9,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">Jägerschnitzel</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">11,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">Balkanschnitzel</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">11,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">Schnitzel Inferno</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">11,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">Schnitzel Hollandaise</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">11,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">Chili Cheese Schnitzel</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">11,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">Schnitzel ohne alles</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">5,90</span></li>
+          </ul>
+        </div>
+        <div class="menu-block reveal-item" id="karte-vegan">
+          <h3 class="menu-block__title">Vegan &amp; vegetarisch</h3>
+          <ul class="price-list">
+            <li class="price-list__item"><span class="price-list__name">Vegane Currywurst</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,80</span></li>
+            <li class="price-list__item"><span class="price-list__name">Vegane Bratwurst</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,20</span></li>
+            <li class="price-list__item"><span class="price-list__name">Vegane Bratwurst + Brötchen</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Veganes Schnitzel<small> mit Pommes + Krautsalat</small></span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">12,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Veganer Burger</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">6,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Veganer Burger Menü</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">12,00</span></li>
+            <li class="price-list__item"><span class="price-list__name">Vegane Mayo</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,00</span></li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="menu-board__col">
+        <div class="menu-block reveal-item" id="karte-kross">
+          <h3 class="menu-block__title">Kross &amp; Knusprig</h3>
+          <ul class="price-list">
+            <li class="price-list__item"><span class="price-list__name">Currywurst</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Currywurst scharf (Inferno)</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Bratwurst</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,00</span></li>
+            <li class="price-list__item"><span class="price-list__name">Bratwurst mit Brötchen</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,30</span></li>
+            <li class="price-list__item"><span class="price-list__name">Balkanwurst</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">Jägerwurst</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">Frikadelle</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,00</span></li>
+            <li class="price-list__item"><span class="price-list__name">Frikadelle + Brötchen</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Curryfrikadelle</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,80</span></li>
+            <li class="price-list__item"><span class="price-list__name">Balkanfrikadelle</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">4,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Jägerfrikadelle</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">4,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Frikadelle Spezial</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">4,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Frikandel</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,40</span></li>
+            <li class="price-list__item"><span class="price-list__name">Frikandel Inferno</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Frikandel Spezial</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,90</span></li>
+            <li class="price-list__item"><span class="price-list__name">6er Nuggets + 1 Soße</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">5,20</span></li>
+            <li class="price-list__item"><span class="price-list__name">9er Nuggets + 1 Soße</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">6,80</span></li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="menu-board__col" id="karte-pommes">
+        <div class="menu-block menu-block--sizes reveal-item">
+          <h3 class="menu-block__title">Holland Pommes</h3>
+          <div class="size-row"><div><span>klein</span><strong>3,30</strong></div><div><span>mittel</span><strong>3,90</strong></div><div><span>groß</span><strong>4,70</strong></div></div>
+        </div>
+        <div class="menu-block menu-block--sizes reveal-item">
+          <h3 class="menu-block__title">Süßkartoffel-Pommes</h3>
+          <div class="size-row"><div><span>klein</span><strong>4,50</strong></div><div><span>mittel</span><strong>5,10</strong></div><div><span>groß</span><strong>5,90</strong></div></div>
+        </div>
+        <div class="menu-block menu-block--sizes reveal-item">
+          <h3 class="menu-block__title">Halbe-Halbe</h3><p class="menu-block__sub">halb Holland, halb Süßkartoffel</p>
+          <div class="size-row"><div><span>mittel</span><strong>4,70</strong></div><div><span>groß</span><strong>5,70</strong></div></div>
+        </div>
+        <div class="menu-block reveal-item">
+          <h3 class="menu-block__title">Toppings &amp; Salate</h3>
+          <ul class="price-list">
+            <li class="price-list__item"><span class="price-list__name">Frische Zwiebeln</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">0,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Röstzwiebeln</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">0,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Jalapeños</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">0,80</span></li>
+            <li class="price-list__item"><span class="price-list__name">Krautsalat</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Gurkensalat<small> mit Sahne und Mayo · kl. / gr.</small></span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,00 / 4,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Nudelsalat<small> mit Sahne und Mayo · kl. / gr.</small></span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,00 / 4,50</span></li>
+            <li class="price-list__item"><span class="price-list__name">Tzatziki<small> kl. / gr.</small></span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">3,00 / 4,50</span></li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="menu-board__col">
+        <div class="menu-block reveal-item" id="karte-sossen">
+          <h3 class="menu-block__title">Soßen</h3>
+          <ul class="price-list">
+            <li class="price-list__item"><span class="price-list__name">Ketchup oder Mayo</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">0,80</span></li>
+            <li class="price-list__item"><span class="price-list__name">Curryketchup</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">0,80</span></li>
+            <li class="price-list__item"><span class="price-list__name">Inferno (scharf)</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Joppiesoße</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Heiße Currysoße</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Sour Creme</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Samurai</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Knoblauchsoße</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Sweet Chili</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Andalouse</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Barbecue</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,60</span></li>
+            <li class="price-list__item"><span class="price-list__name">Trüffelmayo</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">1,60</span></li>
+            <li class="price-list__item"><span class="price-list__name">Käsesoße</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,00</span></li>
+            <li class="price-list__item"><span class="price-list__name">Jägersoße</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,00</span></li>
+            <li class="price-list__item"><span class="price-list__name">Balkansoße</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Chili Cheese</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,10</span></li>
+            <li class="price-list__item"><span class="price-list__name">Spezial</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,00</span></li>
+            <li class="price-list__item"><span class="price-list__name">Hollandaise</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,00</span></li>
+            <li class="price-list__item"><span class="price-list__name">Tzatziki</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,00</span></li>
+          </ul>
+        </div>
+        <div class="menu-block reveal-item" id="karte-getraenke">
+          <h3 class="menu-block__title">Getränke</h3><p class="menu-block__sub">Alle Getränke zzgl. 0,25 € Pfand</p>
+          <ul class="price-list">
+            <li class="price-list__item"><span class="price-list__name">Coca-Cola / Coca-Cola Zero</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,25</span></li>
+            <li class="price-list__item"><span class="price-list__name">Fanta oder Sprite</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,25</span></li>
+            <li class="price-list__item"><span class="price-list__name">Mezzo Mix oder Lift</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,25</span></li>
+            <li class="price-list__item"><span class="price-list__name">ViO Medium / Still</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,25</span></li>
+            <li class="price-list__item"><span class="price-list__name">Fuzetea Pfirsich / Zitrone</span><span class="price-list__dots" aria-hidden="true"></span><span class="price-list__price">2,25</span></li>
+          </ul>
+        </div>
+        </div>
       </div>
 
-      <div class="menu__categories">
-        <h3>Außerdem auf der Karte</h3>
-        <div class="dips__grid">
-          <span class="dips__chip reveal-item">Burger-Menüs</span>
-          <span class="dips__chip reveal-item">Hähnchenschnitzel</span>
-          <span class="dips__chip reveal-item">Snacks</span>
-          <span class="dips__chip reveal-item">Saucen</span>
-          <span class="dips__chip reveal-item">Alkoholfreie Getränke</span>
-        </div>
-        <p class="menu__note">Details und Preise dieser Kategorien: ganze Speisekarte bei Lieferando ansehen oder vor Ort nachfragen.</p>
-      </div>
-
-      <div class="menu__dips">
-        <h3>Saucen &amp; Dips</h3>
-        <div class="dips__grid">
-          <span class="dips__chip reveal-item">Curry-Mayo</span>
-          <span class="dips__chip reveal-item">Knoblauch-Dip</span>
-          <span class="dips__chip reveal-item">Chili-Sauce</span>
-          <span class="dips__chip reveal-item">Ketchup</span>
-          <span class="dips__chip reveal-item">Mayo</span>
-          <span class="dips__chip reveal-item">BBQ-Sauce</span>
-        </div>
-      </div>
+      <p class="menu__note">Alle Preise in Euro inkl. MwSt., Stand: Aushang vor Ort. Änderungen vorbehalten. Informationen zu Allergenen und Zusatzstoffen gibt es an der Theke.</p>
 
       <div class="menu__cta">
-        <a class="btn btn--primary" href="https://www.lieferando.de/speisekarte/frittenliebe-bilk" target="_blank" rel="noopener">Volle Karte bei Lieferando</a>
-        <a class="btn btn--outline" href="tel:+4917688040371">Telefonisch bestellen</a>
+        <a class="btn btn--primary" href="https://www.lieferando.de/speisekarte/frittenliebe-bilk" target="_blank" rel="noopener">Bei Lieferando bestellen</a>
+        <a class="btn btn--outline" href="tel:+4917688040371">Telefonisch vorbestellen</a>
       </div>
     </div>
   </section>
@@ -359,13 +454,13 @@
 
   <section class="about" id="ueber-uns">
     <div class="about__inner">
-      <div class="about__media reveal-left" aria-hidden="true">
-        <div class="about__media-block"></div>
+      <div class="about__media reveal-left">
+        <img class="about__media-block" src="assets/innenraum.jpg" alt="Gastraum von Frittenliebe Bilk mit Holztischen, roten Sitzkissen und großer Fensterfront zum Kirchplatz" width="1124" height="1503" loading="lazy">
       </div>
       <div class="about__text reveal-right">
         <p class="section-eyebrow">Über uns</p>
         <h2>Der Imbiss am Kirchplatz, geführt mit Herz</h2>
-        <p>Frittenliebe Bilk liegt direkt am Kirchplatz, gleich neben der U-Bahn-Haltestelle D-Kirchplatz — mittendrin statt am Rand. Gäste schätzen vor allem eines: die Inhaber sind selbst am Tresen, kennen ihre Stammgäste und nehmen sich Zeit für jede Bestellung, auch wenn es mittags schnell gehen muss.</p>
+        <p>Frittenliebe Bilk liegt direkt am Kirchplatz, gleich neben der U-Bahn-Haltestelle D-Kirchplatz — mittendrin statt am Rand. Drinnen warten Holztische, rote Sitzkissen und eine große Fensterfront mit Blick aufs Treiben am Platz. Gäste schätzen vor allem eines: die Inhaber sind selbst am Tresen, kennen ihre Stammgäste und nehmen sich Zeit für jede Bestellung, auch wenn es mittags schnell gehen muss.</p>
         <p>Ob klassische Currywurst mit Pommes, ein Schnitzel Wiener Art oder ein Burger nach Wunsch belegt: Gekocht wird mit Sorgfalt, nicht auf Masse. Wer vegan oder vegetarisch unterwegs ist, findet hier eine Auswahl, die über die übliche Beilagen-Rolle hinausgeht.</p>
         <a class="link-arrow" href="#bewertungen">Was Gäste sagen<span aria-hidden="true"> →</span></a>
       </div>
@@ -377,21 +472,21 @@
       <div class="gallery__header">
         <p class="section-eyebrow">Impressionen</p>
         <h2 class="section-title">Am Kirchplatz vorbeigeschaut</h2>
-        <p class="section-lead">Ein paar Eindrücke vom Pavillon und den Gerichten. Eigene Fotos folgen — Bildvorschläge unten anklickbar.</p>
+        <p class="section-lead">Ein paar Eindrücke aus dem Gastraum und von den Tellern. Zum Vergrößern einfach auf ein Bild tippen.</p>
       </div>
       <div class="gallery__grid">
-        <!-- BILD ERSETZEN: Foto vom Pavillon außen -->
-        <button class="gallery__tile gallery__tile--a reveal-item" data-caption="Der Pavillon am Kirchplatz" aria-label="Bild vergrößern: Der Pavillon am Kirchplatz"></button>
-        <!-- BILD ERSETZEN: Foto der Currywurst mit Pommes -->
-        <button class="gallery__tile gallery__tile--b reveal-item" data-caption="Doppelte Currywurst mit Pommes" aria-label="Bild vergrößern: Doppelte Currywurst mit Pommes"></button>
-        <!-- BILD ERSETZEN: Foto vom Burger -->
-        <button class="gallery__tile gallery__tile--c reveal-item" data-caption="Burger, frisch vom Grill" aria-label="Bild vergrößern: Burger, frisch vom Grill"></button>
-        <!-- BILD ERSETZEN: Foto der Theke/Zubereitung -->
-        <button class="gallery__tile gallery__tile--d reveal-item" data-caption="Frisch zubereitet an der Theke" aria-label="Bild vergrößern: Frisch zubereitet an der Theke"></button>
-        <!-- BILD ERSETZEN: Foto Schnitzel Wiener Art -->
-        <button class="gallery__tile gallery__tile--e reveal-item" data-caption="Schnitzel Wiener Art" aria-label="Bild vergrößern: Schnitzel Wiener Art"></button>
-        <!-- BILD ERSETZEN: Foto veganes Gericht -->
-        <button class="gallery__tile gallery__tile--f reveal-item" data-caption="Vegane Auswahl" aria-label="Bild vergrößern: Vegane Auswahl"></button>
+        <button class="gallery__tile gallery__tile--a reveal-item" data-caption="Burger, Nuggets und Pommes Currywurst" aria-label="Bild vergrößern: Burger, Nuggets und Pommes Currywurst">
+          <img src="assets/klassiker-auswahl.jpg" alt="Burger, Chicken Nuggets und Pommes mit Currywurst in Pappschalen" loading="lazy">
+        </button>
+        <button class="gallery__tile gallery__tile--b reveal-item" data-caption="Süßkartoffel-Pommes mit Soße" aria-label="Bild vergrößern: Süßkartoffel-Pommes mit Soße">
+          <img src="assets/suesskartoffel-pommes.jpg" alt="Süßkartoffel-Pommes mit heller Soße" loading="lazy">
+        </button>
+        <button class="gallery__tile gallery__tile--c reveal-item" data-caption="Currywurst mit Pommes Mayo" aria-label="Bild vergrößern: Currywurst mit Pommes Mayo">
+          <img src="assets/currywurst-pommes.jpg" alt="Currywurst mit Currysoße und Pommes mit Mayo" loading="lazy">
+        </button>
+        <button class="gallery__tile gallery__tile--d reveal-item" data-caption="Unser Gastraum am Kirchplatz" aria-label="Bild vergrößern: Unser Gastraum am Kirchplatz">
+          <img src="assets/innenraum.jpg" alt="Gastraum mit Holztischen und Fensterfront" loading="lazy">
+        </button>
       </div>
     </div>
   </section>
@@ -402,7 +497,7 @@
       <button class="lightbox__close" data-lightbox-close aria-label="Schließen">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5l14 14M19 5L5 19"/></svg>
       </button>
-      <div class="lightbox__media" id="lightbox-media" aria-hidden="true"></div>
+      <img class="lightbox__media" id="lightbox-media" src="" alt="">
       <p class="lightbox__caption" id="lightbox-caption"></p>
     </div>
   </div>

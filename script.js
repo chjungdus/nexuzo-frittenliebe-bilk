@@ -161,8 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function openLightbox(tile) {
     if (!lightbox || !lightboxMedia || !lightboxCaption) return;
     lastFocusedTile = tile;
-    const computed = window.getComputedStyle(tile).backgroundImage;
-    lightboxMedia.style.background = window.getComputedStyle(tile).background;
+    const img = tile.querySelector('img');
+    if (img) {
+      lightboxMedia.src = img.currentSrc || img.src;
+      lightboxMedia.alt = img.alt;
+    }
     lightboxCaption.textContent = tile.dataset.caption || '';
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
