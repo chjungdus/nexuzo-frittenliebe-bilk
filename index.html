@@ -60,6 +60,12 @@
         </p>
       </div>
 
+      <a class="btn btn--order" href="https://www.lieferando.de/speisekarte/frittenliebe-bilk" target="_blank" rel="noopener">
+        <svg class="btn__order-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12.5a1.5 1.5 0 0 1-1.5 1.5h-7a1.5 1.5 0 0 1-1.5-1.5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span>Jetzt bei Lieferando bestellen</span>
+        <span class="btn__order-arrow" aria-hidden="true">→</span>
+      </a>
+
       <div class="hero__actions">
         <a class="btn btn--primary btn--lg" href="#speisekarte">Speisekarte ansehen</a>
         <a class="btn btn--ghost btn--lg" href="tel:+4917688040371">
@@ -165,6 +171,7 @@
         <a href="#karte-getraenke">Getränke</a>
       </nav>
 
+      <div class="menu__collapse is-collapsed" id="menu-collapse">
       <div class="menu-board">
         <div class="menu-block menu-block--wide reveal-item" id="karte-burger">
           <h3 class="menu-block__title">Burger</h3>
@@ -301,6 +308,15 @@
           </ul>
         </div>
         </div>
+      </div>
+
+      </div>
+
+      <div class="menu__more">
+        <button class="btn btn--primary btn--lg menu__toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-collapse">
+          <span data-label>Ganze Speisekarte anzeigen</span>
+          <svg class="menu__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
 
       <p class="menu__note">Alle Preise in Euro inkl. MwSt., Stand: Aushang vor Ort. Änderungen vorbehalten. Informationen zu Allergenen und Zusatzstoffen gibt es an der Theke.</p>
