@@ -28,6 +28,14 @@
 /* ---------- 1. Tokens & Reset ---------- */
 
 :root {
+  /* Seite ist immer hell: Dark-Mode-Farben aus normalize.css neutralisieren */
+  color-scheme: light;
+  --surface-1: #fdfaf9;
+  --surface-2: #f8e9e4;
+  --surface-3: #f3d3c7;
+  --surface-4: #edc7ba;
+  --text-1: #2c1710;
+  --text-2: #7a5c4a;
   --color-bg:        #fdfaf9;   /* fast Weiß, kein Cremeton mehr */
   --color-surface:   #f8e9e4;   /* helles Koralle/Terrakotta statt Creme */
   --color-surface-2: #f3d3c7;   /* etwas kräftigeres Koralle für Verläufe */
@@ -50,6 +58,21 @@
 }
 
 * { box-sizing: border-box; }
+
+/* Tabellen-Styling aus normalize.css zurücksetzen (sonst dunkel im Dark-Mode) */
+.hours-table,
+.burger-table {
+  width: 100%;
+  max-width: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+.hours-table :is(thead, tbody, tr, th, td),
+.burger-table :is(thead, tbody, tr, th, td) {
+  background: transparent;
+  border-radius: 0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -317,6 +340,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .hero__content {
   position: relative;
+  min-width: 0;
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--size-9) var(--size-5);
@@ -408,7 +433,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .btn__order-arrow { transition: transform 0.2s ease; }
 .btn--order:hover .btn__order-arrow { transform: translateX(4px); }
 @media (max-width: 720px) {
-  .btn--order { display: flex; width: 100%; justify-content: center; padding: 1.1rem 1.2rem; }
+  .btn--order {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.1rem;
+    font-size: 1.1rem;
+    white-space: normal;
+    text-align: center;
+  }
+  .btn__order-arrow { display: none; }
+  .hero__actions .btn { max-width: 100%; }
 }
 
 .hero__actions {
@@ -780,20 +815,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .size-row span { font-size: var(--font-size-0); color: var(--color-muted); }
 .size-row strong { font-size: var(--font-size-3); color: var(--color-accent); font-variant-numeric: tabular-nums; }
 
-/* Karte eingeklappt: nur Anfang sichtbar */
-.menu__collapse { position: relative; }
-.menu__collapse.is-collapsed {
-  max-height: 760px;
-  overflow: hidden;
-}
-.menu__collapse.is-collapsed::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 220px;
-  background: linear-gradient(to bottom, rgba(248, 233, 228, 0), var(--color-surface) 85%);
-  pointer-events: none;
-}
+/* Karte eingeklappt: nur die Burger sichtbar, Rest per Knopf */
+.menu__collapse.is-collapsed .menu-board > :not(#karte-burger) { display: none; }
 .menu__more {
   display: flex;
   justify-content: center;
@@ -1073,6 +1096,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-size: var(--font-size-0);
 }
 .hours-table caption {
+  padding: 0;
   text-align: left;
   font-weight: 700;
   font-family: var(--font-body);
