@@ -151,6 +151,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Speisekarte ein-/ausklappen ---------- */
+
+  const menuCollapse = document.getElementById('menu-collapse');
+  const menuToggle = document.getElementById('menu-toggle');
+
+  function setMenuOpen(open) {
+    if (!menuCollapse || !menuToggle) return;
+    menuCollapse.classList.toggle('is-collapsed', !open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.querySelector('[data-label]').textContent = open ? 'Weniger anzeigen' : 'Ganze Speisekarte anzeigen';
+  }
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+      setMenuOpen(open);
+      if (!open) {
+        const top = menuCollapse.getBoundingClientRect().top + window.scrollY - 120;
+        window.scrollTo({ top });
+      }
+    });
+  }
+
+  // Sprungmarken klappen die Karte automatisch auf
+  document.querySelectorAll('.menu__jump a').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(true));
+  });
+
   /* ---------- Galerie-Lightbox ---------- */
 
   const lightbox = document.getElementById('lightbox');
@@ -161,8 +189,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function openLightbox(tile) {
     if (!lightbox || !lightboxMedia || !lightboxCaption) return;
     lastFocusedTile = tile;
-    const computed = window.getComputedStyle(tile).backgroundImage;
-    lightboxMedia.style.background = window.getComputedStyle(tile).background;
+    const img = tile.querySelector('img');
+    if (img) {
+      lightboxMedia.src = img.currentSrc || img.src;
+      lightboxMedia.alt = img.alt;
+    }
     lightboxCaption.textContent = tile.dataset.caption || '';
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
