@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="https://unpkg.com/open-props">
 <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:image" content="assets/logo-square.jpg">
 </head>
 <body>
 
@@ -18,7 +21,7 @@
 
 <header class="nav" id="top">
   <div class="nav__inner">
-    <a class="nav__logo" href="#top">Fritten<span>liebe</span> <small>Bilk</small></a>
+    <a class="nav__logo" href="#top"><img class="nav__logo-img" src="assets/logo-square.jpg" alt="" width="44" height="44">Fritten<span>liebe</span> <small>Bilk</small></a>
     <nav class="nav__links" id="nav-links">
       <a href="#speisekarte">Speisekarte</a>
       <a href="#lieferando">Lieferando</a>
@@ -43,16 +46,24 @@
 <main id="main">
 
   <section class="hero">
+    <video class="hero__video" id="hero-video" autoplay muted loop playsinline preload="metadata"
+      poster="assets/hero-currywurst-poster.jpg"
+      data-src-wide="assets/hero-currywurst.mp4"
+      data-src-narrow="assets/pommes-shake.mp4"
+      data-poster-narrow="assets/pommes-shake-poster.jpg"
+      aria-hidden="true"></video>
     <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__inner">
     <div class="hero__content reveal-scale">
+      <img class="hero__logo" src="assets/logo.png" alt="Logo von Frittenliebe Bilk" width="560" height="534">
       <p class="hero__eyebrow">Imbiss am Kirchplatz · Bilk, Düsseldorf</p>
-      <h1 class="hero__title">Frittenliebe<br>Bilk</h1>
-      <p class="hero__sub">Frische Pommes, herzhafte Currywurst und saftige Burger — mitten in Bilk, direkt am Kirchplatz. Die erste Adresse fürs schnelle, ehrliche Essen im Viertel.</p>
+      <h1 class="hero__title"><span class="visually-hidden">Frittenliebe Bilk – </span>Pommes, Currywurst &amp; Burger am Kirchplatz</h1>
+      <p class="hero__sub">Frisch geschwenkte Pommes, herzhafte Currywurst und saftige Burger — mitten in Bilk. Die erste Adresse fürs schnelle, ehrliche Essen im Viertel.</p>
 
       <div class="hero__meta">
         <div class="hero__rating">
           <span class="hero__stars" aria-hidden="true">★★★★★</span>
-          <span>4,8 von 5 · 25 Google-Bewertungen</span>
+          <span>4,8 von 5 · 27 Google-Bewertungen</span>
         </div>
         <p class="hero__status" id="hero-status" data-status-badge>
           <span class="hero__status-dot" aria-hidden="true"></span>
@@ -74,6 +85,14 @@
         </a>
       </div>
     </div>
+
+    <figure class="hero__clip reveal-scale">
+      <video class="hero__clip-video" autoplay muted loop playsinline preload="metadata" poster="assets/pommes-shake-poster.jpg" aria-label="Video: Frische Pommes werden in der Schwenkschüssel gesalzen">
+        <source src="assets/pommes-shake.mp4" type="video/mp4">
+      </video>
+      <figcaption>Frisch aus der Fritteuse, direkt geschwenkt</figcaption>
+    </figure>
+    </div>
   </section>
 
   <section class="usp" aria-label="Auf einen Blick">
@@ -86,7 +105,7 @@
           </svg>
         </span>
         <p class="usp__title">4,8 Sterne</p>
-        <p class="usp__text">Aus 25 Bewertungen bei Google — bewertet von Gästen aus Bilk und Umgebung.</p>
+        <p class="usp__text">Aus 27 Bewertungen bei Google — bewertet von Gästen aus Bilk und Umgebung.</p>
       </div>
       <div class="usp__item reveal-item">
         <span class="usp__icon" aria-hidden="true">
@@ -529,7 +548,7 @@
         <div class="reviews__score">4,8</div>
         <div class="reviews__score-meta">
           <span class="reviews__stars" aria-hidden="true">★★★★★</span>
-          <p>Basierend auf 25 Google-Bewertungen</p>
+          <p>Basierend auf 27 Google-Bewertungen</p>
         </div>
       </div>
 
@@ -547,7 +566,7 @@
           <footer>Google-Rezension</footer>
         </blockquote>
       </div>
-      <p class="reviews__link"><a href="https://www.google.com/maps/place/Frittenliebe+Bilk" target="_blank" rel="noopener">Alle 25 Bewertungen bei Google ansehen<span aria-hidden="true"> →</span></a></p>
+      <p class="reviews__link"><a href="https://www.google.com/maps/place/Frittenliebe+Bilk" target="_blank" rel="noopener">Alle 27 Bewertungen bei Google ansehen<span aria-hidden="true"> →</span></a></p>
     </div>
   </section>
 
@@ -644,7 +663,7 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__brand">
-      <p class="footer__logo">Fritten<span>liebe</span> Bilk</p>
+      <img class="footer__logo-img" src="assets/logo.png" alt="Frittenliebe Bilk" width="560" height="534" loading="lazy">
       <p>Pavillon 1D Kirchplatz, 40217 Düsseldorf</p>
       <p>Mo–Fr 10:30–18:00 Uhr · Sa/So geschlossen</p>
     </div>
