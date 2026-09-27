@@ -151,6 +151,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Hero-Video: breit = Currywurst, schmal (Handy) = Pommes-Shake ---------- */
+
+  const heroVideo = document.getElementById('hero-video');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const narrowQuery = window.matchMedia('(max-width: 860px)');
+
+  function setHeroVideo() {
+    if (!heroVideo) return;
+    const narrow = narrowQuery.matches;
+    const src = narrow ? heroVideo.dataset.srcNarrow : heroVideo.dataset.srcWide;
+    if (narrow && heroVideo.dataset.posterNarrow) heroVideo.poster = heroVideo.dataset.posterNarrow;
+    if (reduceMotion.matches) return; // nur Standbild bei reduzierter Bewegung
+    if (heroVideo.getAttribute('src') !== src) {
+      heroVideo.src = src;
+      heroVideo.play().catch(() => {});
+    }
+  }
+  setHeroVideo();
+  narrowQuery.addEventListener('change', setHeroVideo);
+
+  if (reduceMotion.matches) {
+    document.querySelectorAll('.hero__clip-video').forEach((v) => {
+      v.removeAttribute('autoplay');
+      v.pause();
+      v.controls = true;
+    });
+  }
+
   /* ---------- Speisekarte ein-/ausklappen ---------- */
 
   const menuCollapse = document.getElementById('menu-collapse');
