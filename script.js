@@ -177,25 +177,66 @@ document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const narrowQuery = window.matchMedia('(max-width: 860px)');
 
+  const pauseBtn = document.getElementById('hero-pause');
+  const heroVideos = () => document.querySelectorAll('#hero-video, .hero__clip-video');
+  let videosPaused = reduceMotion.matches; // bei reduzierter Bewegung starten die Videos pausiert
+
   function setHeroVideo() {
     if (!heroVideo) return;
     const narrow = narrowQuery.matches;
     const src = narrow ? heroVideo.dataset.srcNarrow : heroVideo.dataset.srcWide;
     if (narrow && heroVideo.dataset.posterNarrow) heroVideo.poster = heroVideo.dataset.posterNarrow;
-    if (reduceMotion.matches) return; // nur Standbild bei reduzierter Bewegung
+    if (videosPaused && !heroVideo.getAttribute('src')) return; // bis zum Abspielen nur Standbild
     if (heroVideo.getAttribute('src') !== src) {
       heroVideo.src = src;
-      heroVideo.play().catch(() => {});
+      if (!videosPaused) heroVideo.play().catch(() => {});
     }
   }
   setHeroVideo();
   narrowQuery.addEventListener('change', setHeroVideo);
 
-  if (reduceMotion.matches) {
-    document.querySelectorAll('.hero__clip-video').forEach((v) => {
-      v.removeAttribute('autoplay');
-      v.pause();
-      v.controls = true;
+  // Pause-/Abspiel-Knopf für beide Hero-Videos (WCAG 2.2.2)
+  function updatePauseButton() {
+    if (!pauseBtn) return;
+    pauseBtn.setAttribute('aria-pressed', String(videosPaused));
+    pauseBtn.querySelector('[data-label]').textContent = videosPaused ? 'Videos abspielen' : 'Videos pausieren';
+    pauseBtn.querySelector('[data-icon-pause]').hidden = videosPaused;
+    pauseBtn.querySelector('[data-icon-play]').hidden = !videosPaused;
+  }
+
+  function setVideosPaused(paused) {
+    videosPaused = paused;
+    if (!paused) setHeroVideo();
+    heroVideos().forEach((v) => {
+      if (paused) {
+        v.removeAttribute('autoplay');
+        v.pause();
+      } else if (v.getAttribute('src') || v.querySelector('source')) {
+        v.play().catch(() => {});
+      }
+    });
+    updatePauseButton();
+  }
+
+  if (pauseBtn) {
+    pauseBtn.addEventListener('click', () => setVideosPaused(!videosPaused));
+  }
+  if (videosPaused) setVideosPaused(true);
+  updatePauseButton();
+
+  /* ---------- Google Maps erst nach Einwilligung laden ---------- */
+
+  const mapBox = document.getElementById('map-consent');
+  const mapLoad = mapBox && mapBox.querySelector('[data-map-load]');
+  if (mapBox && mapLoad) {
+    mapLoad.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.title = 'Standort Frittenliebe Bilk auf Google Maps';
+      iframe.src = mapBox.dataset.mapSrc;
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      mapBox.replaceChildren(iframe);
+      iframe.focus();
     });
   }
 
