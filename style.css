@@ -210,6 +210,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .btn--whatsapp svg { width: 18px; height: 18px; }
 .btn--whatsapp:hover { box-shadow: var(--shadow-3); background: #21bd5a; }
 
+.btn--insta {
+  margin-top: var(--size-6);
+  margin-left: var(--size-2);
+  background: linear-gradient(45deg, #f58529, #dd2a7b 55%, #8134af);
+  color: #fff;
+}
+.btn--insta svg { width: 18px; height: 18px; }
+.btn--insta:hover { box-shadow: var(--shadow-3); }
+@media (max-width: 480px) {
+  .btn--insta { margin-left: 0; margin-top: var(--size-3); }
+}
+
 .btn--lg { padding: 1rem 1.9rem; font-size: var(--font-size-2); }
 
 .btn__phone-icon {
@@ -328,6 +340,23 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   .nav__menu.is-open { animation: none; }
 }
+
+.nav__insta {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--size-3);
+  padding: var(--size-3) var(--size-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+.nav__insta svg { width: 26px; height: 26px; color: #dd2a7b; flex-shrink: 0; }
+.nav__insta strong { color: var(--color-accent); }
+.nav__insta:hover { border-color: var(--color-accent); }
 
 /* Kopfbereich der Unterseiten */
 .page-hero {
@@ -1286,6 +1315,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .footer__logo { font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: var(--size-3); }
 .footer__logo span { color: #f2895a; }
 .footer__brand p { margin-bottom: var(--size-1); font-size: var(--font-size-0); }
+.footer__insta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-2);
+  margin-top: var(--size-3);
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--font-size-0);
+}
+.footer__insta svg { width: 20px; height: 20px; }
+.footer__insta:hover { color: #f2895a; }
 .footer__links, .footer__legal { display: flex; flex-direction: column; gap: var(--size-2); font-size: var(--font-size-0); }
 .footer__links a:hover, .footer__legal a:hover { color: #fff; }
 .footer__probe {
