@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="legal.css">
+<link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
@@ -20,21 +21,40 @@
 
 <header class="nav" id="top">
   <div class="nav__inner">
-    <a class="nav__logo" href="index.html">Fritten<span>liebe</span> <small>Bilk</small></a>
-    <nav class="nav__links" id="nav-links">
-      <a href="index.html#speisekarte">Speisekarte</a>
-      <a href="index.html#ueber-uns">Über uns</a>
-      <a href="index.html#bewertungen">Bewertungen</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html#kontakt">Kontakt</a>
-    </nav>
+    <a class="nav__logo" href="index.html"><img class="nav__logo-img" src="assets/logo-square.jpg" alt="" width="44" height="44">Fritten<span>liebe</span> <small>Bilk</small></a>
     <div class="nav__actions">
-      <a class="btn btn--primary" href="tel:+4917688040371">Anrufen</a>
+      <a class="btn btn--lieferando" href="https://www.lieferando.de/speisekarte/frittenliebe-bilk" target="_blank" rel="noopener" aria-label="Bei Lieferando bestellen">
+        <svg class="btn__bag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12.5a1.5 1.5 0 0 1-1.5 1.5h-7a1.5 1.5 0 0 1-1.5-1.5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="btn__label">Lieferando</span>
+      </a>
+      <a class="btn btn--primary nav__call" href="tel:+4917688040371">Anrufen</a>
       <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
+  <nav class="nav__menu" id="nav-links" aria-label="Hauptmenü">
+    <div class="nav__menu-inner">
+      <div class="nav__group">
+        <p class="nav__group-title">Startseite</p>
+        <a href="index.html#speisekarte">Speisekarte</a>
+        <a href="index.html#lieferando">Lieferando</a>
+        <a href="index.html#kontakt">Kontakt &amp; Öffnungszeiten</a>
+        <a href="index.html#galerie">Impressionen</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="nav__group">
+        <p class="nav__group-title">Mehr entdecken</p>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="bewertungen.html">Bewertungen</a>
+        <a href="anfahrt.html">Anfahrt &amp; Bestellwege</a>
+      </div>
+      <a class="nav__insta" href="https://www.instagram.com/frittenliebe_bilk/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+        <span>Folge uns auf Instagram <strong>@frittenliebe_bilk</strong></span>
+      </a>
+    </div>
+  </nav>
 </header>
 
 <main id="main" class="legal">
@@ -142,11 +162,10 @@
       <p class="footer__logo">Fritten<span>liebe</span> Bilk</p>
       <p>Pavillon 1D Kirchplatz, 40217 Düsseldorf</p>
       <p>Mo–Fr 10:30–18:00 Uhr · Sa/So geschlossen</p>
+      <a class="footer__insta" href="https://www.instagram.com/frittenliebe_bilk/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg><span>@frittenliebe_bilk</span></a>
     </div>
     <div class="footer__links">
       <a href="index.html#speisekarte">Speisekarte</a>
-      <a href="index.html#ueber-uns">Über uns</a>
-      <a href="index.html#bewertungen">Bewertungen</a>
       <a href="index.html#faq">FAQ</a>
       <a href="index.html#kontakt">Kontakt</a>
     </div>

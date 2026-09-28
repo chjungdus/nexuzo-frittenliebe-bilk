@@ -1,7 +1,7 @@
 // Frittenliebe Bilk — Probewebsite (Nexuzo)
 // Inhalt: Mobile-Nav, Scroll-Reveal, Sticky-Nav-Shadow, Scrollspy,
 //         Live-Öffnungsstatus, Öffnungszeiten-Tabelle, FAQ-Akkordeon,
-//         Galerie-Lightbox, Back-to-top
+//         Galerie-Lightbox, Back-to-top, Hamburger-Menü
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -16,11 +16,31 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
+    const closeMenu = () => {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Menü öffnen');
+    };
+
+    toggle.addEventListener('click', () => {
+      toggle.setAttribute('aria-label', links.classList.contains('is-open') ? 'Menü schließen' : 'Menü öffnen');
+    });
+
     links.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        links.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Schließen per Escape oder Klick außerhalb
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && links.classList.contains('is-open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (links.classList.contains('is-open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+        closeMenu();
+      }
     });
   }
 
@@ -61,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const sections = Array.from(document.querySelectorAll('main section[id]'));
   const navLinkMap = new Map();
-  document.querySelectorAll('.nav__links a[href^="#"]').forEach((a) => {
+  document.querySelectorAll('.nav__menu a[href^="#"]').forEach((a) => {
     navLinkMap.set(a.getAttribute('href').slice(1), a);
   });
 
