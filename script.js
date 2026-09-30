@@ -1,4 +1,4 @@
-// Frittenliebe Bilk — Probewebsite (Nexuzo)
+// Frittenliebe Bilk
 // Inhalt: Mobile-Nav, Scroll-Reveal, Sticky-Nav-Shadow, Scrollspy,
 //         Live-Öffnungsstatus, Öffnungszeiten-Tabelle, FAQ-Akkordeon,
 //         Galerie-Lightbox, Back-to-top, Hamburger-Menü
