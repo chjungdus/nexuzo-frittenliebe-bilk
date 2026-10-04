@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.frittenliebe-bilk.de/sitemap.xml

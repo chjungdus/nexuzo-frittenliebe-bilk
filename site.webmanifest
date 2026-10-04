@@ -1,0 +1,14 @@
+{
+  "name": "Frittenliebe Bilk",
+  "short_name": "Frittenliebe",
+  "description": "Imbiss am Kirchplatz in Düsseldorf-Bilk – Pommes, Currywurst & Burger",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fdfaf9",
+  "theme_color": "#e8491c",
+  "lang": "de",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.png", "sizes": "64x64", "type": "image/png" }
+  ]
+}

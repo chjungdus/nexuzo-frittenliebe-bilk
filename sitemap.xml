@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.frittenliebe-bilk.de/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image><image:loc>https://www.frittenliebe-bilk.de/assets/currywurst-pommes.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.frittenliebe-bilk.de/assets/suesskartoffel-pommes.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.frittenliebe-bilk.de/assets/klassiker-auswahl.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.frittenliebe-bilk.de/assets/innenraum.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.frittenliebe-bilk.de/ueber-uns.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image><image:loc>https://www.frittenliebe-bilk.de/assets/innenraum.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.frittenliebe-bilk.de/bewertungen.html</loc>
+    <lastmod>2026-10-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.frittenliebe-bilk.de/anfahrt.html</loc>
+    <lastmod>2026-10-04</lastmod>
+  </url>
+</urlset>
